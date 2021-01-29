@@ -36,7 +36,11 @@ $(function() {
                 if (res.status !== 0) {
                     return layer.msg('注册失败')
                 } else {
-                    $('.reg—form a').click()
+                    layer.msg('注册成功', {
+                        time: 1500
+                    }, function() {
+                        $('.reg—form a').click()
+                    })
                 }
             })
     });
@@ -53,7 +57,7 @@ $(function() {
                 } else {
                     localStorage.setItem('token', res.token);
                     layer.msg('登录成功', {
-                        time: 1000
+                        time: 1500
                     }, function() {
                         location.href = './index.html'
                     });
