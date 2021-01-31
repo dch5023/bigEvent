@@ -2,7 +2,7 @@ function getUserInfo() {
     // 发送请求
     axios.get('/my/userinfo')
         .then(res => {
-            console.log(res);
+            // console.log(res);
             // 判断是否失败
             if (res.status != 0) {
                 return layer.msg('获取用户信息失败！')

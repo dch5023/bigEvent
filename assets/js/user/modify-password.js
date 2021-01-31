@@ -26,7 +26,11 @@ $(function() {
                     return layer.msg('密码修改失败')
                 };
                 // 成功后
-                layer.msg('密码修改成功')
+                layer.msg('密码修改成功');
+                // 退出到登录页
+                window.parent.location.href = '../home/login.html';
+                // 清除token令牌
+                localStorage.removeItem('token')
             })
     })
 
