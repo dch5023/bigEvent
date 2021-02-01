@@ -90,6 +90,29 @@ $(function() {
                 layer.msg('修改成功')
                 geiCateList()
             })
+    });
+
+
+    // 6. 点击删除按钮 弹出询问框
+    $(document).on('click', '.del-btn', function() {
+        // 获取id
+        const delId = $(this).data('id');
+        // 6.1显示询问框
+        layer.confirm('确定删除？', { icon: 3, title: '提示' }, function(index) {
+            // 点击确定的话 发送请求
+            axios.get(`/my/article/deletecate/${delId}`)
+                .then(res => {
+                    // console.log(res);
+                    // 判断是否成功
+                    if (res.status != 0) {
+                        return layer.msg('删除失败')
+                    };
+                    layer.msg('删除成功')
+                    geiCateList()
+                });
+            // 确定后关闭弹出层
+            layer.close(index);
+        });
     })
 
 

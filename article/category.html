@@ -89,12 +89,6 @@
 
 
 
-
-
-
-
-
-
     <!-- 遍历语法{{each 遍历对象}}  {{/each}} -->
     <!-- 条件语法 {{if 条件}} {{/if}} -->
     <!-- $value 表示当前遍历的 -->
@@ -105,7 +99,7 @@
             <td>{{$value.alias}}</td>
             <td>
                 <button data-id="{{$value.Id}}" type="button " class="layui-btn layui-btn-xs edit-btn ">编辑</button>
-                <button type="button " class="layui-btn layui-btn-xs layui-btn-danger ">删除</button>
+                <button data-id="{{$value.Id}}" type="button " class="layui-btn layui-btn-xs layui-btn-danger del-btn">删除</button>
             </td>
         </tr>
         {{/each}}
