@@ -36,10 +36,14 @@
      getUserInfo();
      // 点击退出
      $('#logout').click(function() {
-         // 首先清除本地token
-         localStorage.removeItem('token');
-         // 再跳转到登录页
-         location.href = './login.html'
+         // 弹出询问框
+         layer.confirm('确定退出吗?', { icon: 3, title: '提示' }, function(index) {
+             //  // 首先清除本地token
+             localStorage.removeItem('token');
+             //  // 再跳转到登录页
+             location.href = './login.html';
+             layer.close(index);
+         });
      })
 
 
