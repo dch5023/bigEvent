@@ -27,11 +27,6 @@ $(function() {
         initEditor();
 
     };
-
-
-
-
-
     // 1.从服务器获取文章分类列表数据
     function geiCatelist() {
         // 发送请求
